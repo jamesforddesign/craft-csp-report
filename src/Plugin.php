@@ -30,7 +30,11 @@ class Plugin extends BasePlugin
 
         $this->attachEventHandlers();
 
-        Craft::$app->getResponse()->getHeaders()->set('Content-Security-Policy-Report-Only', "default-src 'self'; report-uri " . UrlHelper::actionUrl('csp/report/log'));
+        if (Craft::$app->getRequest()->getIsConsoleRequest() === false) {
+            Craft::$app->getResponse()->getHeaders()->set(
+                'Content-Security-Policy-Report-Only',
+                "default-src 'self'; report-uri " . UrlHelper::actionUrl('csp/report/log'));
+        }
 
         // Any code that creates an element query or loads Twig should be deferred until
         // after Craft is fully initialized, to avoid conflicts with other plugins/modules
