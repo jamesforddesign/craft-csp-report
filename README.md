@@ -30,3 +30,12 @@ composer require jfd/craft-csp-report
 ```
 php craft plugin/install _csp-report
 ```
+
+## How to update this package
+
+After making your changes, tag the release:
+
+```
+git tag 1.0.1
+git push --tags
+```
