@@ -1,0 +1,30 @@
+{
+  "name": "jfd/craft-csp-report",
+  "description": "Sets a Content-Security-Policy-Report-Only header, creates an action to receive CSP violation reports, and logs them to a file.",
+  "type": "craft-plugin",
+  "require": {
+    "php": ">=8.3",
+    "craftcms/cms": "^5.9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "jfd\\craftcspreport\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "_csp-report",
+    "name": "CSP Report",
+    "developer": "JFD",
+    "documentationUrl": ""
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "8.2"
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}
