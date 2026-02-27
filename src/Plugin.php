@@ -33,7 +33,7 @@ class Plugin extends BasePlugin
         if (Craft::$app->getRequest()->getIsConsoleRequest() === false) {
             Craft::$app->getResponse()->getHeaders()->set(
                 'Content-Security-Policy-Report-Only',
-                "default-src 'self'; report-uri " . UrlHelper::actionUrl('csp/report/log'));
+                "default-src 'self'; report-uri " . UrlHelper::actionUrl('_csp-report/report/log'));
         }
 
         // Any code that creates an element query or loads Twig should be deferred until
